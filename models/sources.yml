@@ -1,0 +1,49 @@
+version: 2
+
+sources:
+  - name: main
+    schema: main
+    description: Raw input data sources
+    tables:
+      - name: contracts
+        description: Master contract data
+        columns:
+          - name: contract_id
+            description: Unique contract identifier
+            tests:
+              - unique
+              - not_null
+          - name: account_id
+            description: Customer account ID
+            tests:
+              - not_null
+          - name: start_date
+            description: Contract start date
+          - name: renewal_date
+            description: Next renewal date
+          - name: product_list
+            description: Comma-separated list of products
+          - name: contract_value
+            description: Annual contract value
+      
+      - name: product_usage
+        description: Monthly product usage records (6+ months historical)
+        columns:
+          - name: contract_id
+            description: Contract identifier
+            tests:
+              - not_null
+          - name: product_code
+            description: Product code (e.g., ForceDecks, DynaMo)
+            tests:
+              - not_null
+          - name: month_date
+            description: First day of month for usage data
+            tests:
+              - not_null
+          - name: test_count
+            description: Number of tests/units used in month
+            tests:
+              - not_null
+          - name: region
+            description: Geographic region

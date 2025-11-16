@@ -1,0 +1,9 @@
+saas_renewal_churn:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'saas_renewal_churn.duckdb'
+      schema: main
+      threads: 4
+      timeout_seconds: 300

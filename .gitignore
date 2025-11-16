@@ -1,0 +1,9 @@
+target/
+dbt_packages/
+logs/
+saas_renewal_churn.duckdb
+saas_renewal_churn.duckdb.wal
+.DS_Store
+*.pyc
+__pycache__/
+.env
